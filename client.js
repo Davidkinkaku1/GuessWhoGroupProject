@@ -1,10 +1,13 @@
+let randomNum = 0;
 console.log('Here are all the available people:', people);
 $().ready(function () {
     console.log('DOM is ready');
 
+    // calling the functions
+    randomNum=randomNumber(0,4);
+    console.log(people[randomNum]);
     addImage();
-
-
+    
     // Displaying to the DOM
 
 
@@ -12,18 +15,17 @@ $().ready(function () {
 });
 
 // [x] - Dislpay the images
-// [] - pick random person 
+// [x] - pick random person 
 // [] - logics to win or lose 
 // [] - 
 
 
 
-
 function addImage() {
     //adding h1 tag
-    let h1Adder = $(`<h1>Click Me: <span id= randomNameSpan>name</span></h1>`);
+    let h1Adder = $(`<h1>Click Me: <span>${people[randomNum].name}</span></h1>`);
     $(".gameZone").append(h1Adder);
-
+    
     //loop through the array of people 
     for (let i = 0; i < people.length; i++) {
         let picAdder = $(`<div class='picZone'> 
@@ -37,13 +39,15 @@ function addImage() {
 
 
 //function to generate a random number
-function randomNumber() {
+function randomNumber(min, max) {
 
     for (let i = 0; i < people.length; i++) {
         return Math.floor(Math.random() * (1 + max - min) + min);
     }
-    console.log(people[randomNumber]);
+    
 }
+
+// console.log(randomNumber(0, 4));
 
 
 // function randomNumber(){
