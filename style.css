@@ -5,3 +5,23 @@
 span {
     font-family: cursive;
 }
+
+.winner {
+    transform: rotate(720deg);
+    border:10px solid yellow;
+}
+
+img {
+    transform: rotate(0deg);
+    transition-duration: 1s;
+    transition-property: transform;
+}
+
+body {
+margin: 10px;
+padding: 10px;
+}
+
+.picZone {
+    padding: 10px;
+}
